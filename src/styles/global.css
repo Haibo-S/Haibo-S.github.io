@@ -154,8 +154,7 @@ a:focus-visible {
   background-position: center 52%;
   background-size: cover;
   filter: blur(0.75px) saturate(0.86) brightness(1.02);
-  opacity: 0.94;
-  transition: opacity 920ms ease;
+  opacity: 1;
 }
 
 .hero-background-next {
@@ -171,12 +170,8 @@ a:focus-visible {
   transition: opacity 920ms ease;
 }
 
-.hero.is-transitioning::before {
-  opacity: 0;
-}
-
 .hero.is-transitioning .hero-background-next {
-  opacity: 0.94;
+  opacity: 1;
 }
 
 .hero::after {

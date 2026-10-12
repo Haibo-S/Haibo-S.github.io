@@ -53,7 +53,7 @@ import HomePage from "@/components/HomePage";
     queuedImage.src = queued;
 
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const transitionDuration = reduceMotion ? 10 : 920;
+    const transitionDuration = reduceMotion ? 10 : 1000;
     window.setInterval(() => {
       const next = queued;
       const image = queuedImage;
