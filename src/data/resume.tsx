@@ -21,6 +21,7 @@ export const DATA = {
     logoUrl: "logos/university-of-waterloo.png",
     program: "Software Engineering",
     year: "4th year",
+    focusAreas: ["Computer architecture", "Digital design", "Systems software"],
   },
   aboutBackgrounds: [
     "images/about-bg-01.webp",

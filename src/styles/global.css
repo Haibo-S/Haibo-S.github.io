@@ -160,7 +160,7 @@ a:focus-visible {
 .hero::after {
   z-index: -1;
   inset: -32px;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.26), rgba(255, 255, 255, 0.3) 54%, rgba(255, 255, 255, 0.36));
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0.36) 54%, rgba(255, 255, 255, 0.42));
 }
 
 .hero-inner {
@@ -186,6 +186,7 @@ a:focus-visible {
   font-weight: 650;
   letter-spacing: -0.075em;
   line-height: 1.1;
+  animation: about-name-enter 720ms cubic-bezier(0.2, 0.7, 0.2, 1) 80ms both;
 }
 
 .hero h1 span {
@@ -216,9 +217,10 @@ a:focus-visible {
 }
 
 .education-section-inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: 138px minmax(0, 1fr);
   align-items: center;
-  gap: clamp(28px, 4vw, 52px);
+  gap: clamp(24px, 4vw, 48px);
   width: min(1160px, 100%);
   margin: 0 auto;
 }
@@ -233,29 +235,22 @@ a:focus-visible {
 
 .education-card {
   display: grid;
-  grid-template-columns: 180px 1px minmax(115px, 1fr) 20px;
+  grid-template-columns: 148px 1px minmax(0, 1fr) 28px;
   align-items: center;
-  gap: 17px;
-  width: fit-content;
+  gap: 16px;
+  width: 100%;
   max-width: 100%;
-  min-height: 88px;
+  min-height: 112px;
   border: 1px solid rgba(230, 225, 212, 0.92);
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.91);
-  padding: 13px 17px;
+  padding: 14px 16px;
   box-shadow: 0 10px 32px rgba(43, 39, 28, 0.07);
-  transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
-}
-
-.education-card:hover {
-  transform: translateY(-2px);
-  border-color: #e3c65d;
-  box-shadow: 0 14px 34px rgba(43, 39, 28, 0.11);
 }
 
 .education-card > img {
   display: block;
-  width: 180px;
+  width: 148px;
   height: auto;
   max-height: 62px;
   object-fit: contain;
@@ -269,9 +264,10 @@ a:focus-visible {
 
 .education-copy {
   display: flex;
+  min-width: 0;
   flex-direction: column;
-  gap: 5px;
-  white-space: nowrap;
+  align-items: flex-start;
+  gap: 4px;
 }
 
 .education-copy strong {
@@ -279,16 +275,66 @@ a:focus-visible {
   font-weight: 700;
 }
 
-.education-copy span {
+.education-year {
   color: #56534d;
   font-size: 17px;
   font-weight: 550;
+}
+
+.education-focus-label {
+  margin-top: 5px;
+  color: #746f64;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.education-focus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.education-interest {
+  border: 1px solid #eee5c9;
+  border-radius: 999px;
+  background: #fffdf7;
+  padding: 5px 8px;
+  color: #4b473e;
+  font-size: 12px;
+  font-weight: 550;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.education-arrow-link {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  justify-self: center;
+  color: #9b7412;
 }
 
 .education-arrow {
   width: 18px;
   height: 18px;
   color: #9b7412;
+  transition: transform 160ms ease;
+}
+
+.education-arrow-link:hover .education-arrow {
+  transform: translate(2px, -2px);
+}
+
+.education-arrow-link:focus-visible {
+  outline: 3px solid #b58712;
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 .hero-intro {
@@ -299,6 +345,7 @@ a:focus-visible {
   font-weight: 450;
   line-height: 1.68;
   text-wrap: pretty;
+  animation: about-copy-enter 760ms cubic-bezier(0.2, 0.7, 0.2, 1) 190ms both;
 }
 
 .hero-photo {
@@ -308,6 +355,22 @@ a:focus-visible {
   height: 252px;
   margin: 0;
   justify-self: end;
+  animation: about-photo-enter 760ms cubic-bezier(0.2, 0.7, 0.2, 1) 250ms both;
+}
+
+@keyframes about-name-enter {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes about-copy-enter {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes about-photo-enter {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 .hero-photo::before {
@@ -510,6 +573,7 @@ a:focus-visible {
   }
 
   .education-section-inner {
+    grid-template-columns: 128px minmax(0, 1fr);
     gap: 24px;
   }
 
@@ -535,13 +599,13 @@ a:focus-visible {
   }
 
   .education-card {
-    grid-template-columns: 152px 1px minmax(104px, 1fr) 18px;
-    gap: 13px;
+    grid-template-columns: 132px 1px minmax(0, 1fr) 26px;
+    gap: 12px;
     padding: 12px;
   }
 
   .education-card > img {
-    width: 152px;
+    width: 132px;
   }
 
   .experience-row {
@@ -589,7 +653,7 @@ a:focus-visible {
   }
 
   .education-section-inner {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     align-items: flex-start;
     gap: 12px;
   }
@@ -621,14 +685,14 @@ a:focus-visible {
   }
 
   .education-card {
-    grid-template-columns: 128px 1px minmax(100px, 1fr) 16px;
-    gap: 11px;
-    min-height: 78px;
+    grid-template-columns: 108px 1px minmax(0, 1fr) 26px;
+    gap: 10px;
+    min-height: 100px;
     padding: 10px;
   }
 
   .education-card > img {
-    width: 128px;
+    width: 108px;
   }
 
   .education-divider {
@@ -639,8 +703,13 @@ a:focus-visible {
     font-size: 15px;
   }
 
-  .education-copy span {
+  .education-year {
     font-size: 14px;
+  }
+
+  .education-interest {
+    font-size: 11px;
+    padding: 4px 7px;
   }
 
   .hero-intro {
@@ -766,21 +835,39 @@ a:focus-visible {
   }
 
   .education-card {
-    grid-template-columns: 104px 1px minmax(90px, 1fr) 14px;
-    gap: 8px;
+    grid-template-columns: 78px 1px minmax(0, 1fr) 24px;
+    gap: 7px;
     padding: 9px;
   }
 
   .education-card > img {
-    width: 104px;
+    width: 78px;
+  }
+
+  .education-arrow-link {
+    width: 24px;
+    height: 24px;
   }
 
   .education-copy strong {
     font-size: 14px;
   }
 
-  .education-copy span {
+  .education-year {
     font-size: 13px;
+  }
+
+  .education-focus-label {
+    font-size: 10px;
+  }
+
+  .education-focus {
+    gap: 5px;
+  }
+
+  .education-interest {
+    font-size: 10px;
+    padding: 4px 6px;
   }
 
   .experience-row {
@@ -829,5 +916,11 @@ a:focus-visible {
   *::after {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .hero h1,
+  .hero-intro,
+  .hero-photo {
+    animation: none !important;
   }
 }

@@ -31,15 +31,30 @@ function Education() {
     <section className="education-section" id="education" aria-labelledby="education-title">
       <div className="education-section-inner">
         <h2 id="education-title">Education</h2>
-        <a className="education-card" href={DATA.education.href} target="_blank" rel="noreferrer">
+        <div className="education-card">
           <img src={asset(DATA.education.logoUrl)} alt="University of Waterloo" />
           <span className="education-divider" aria-hidden="true" />
           <span className="education-copy">
             <strong>{DATA.education.program}</strong>
-            <span>{DATA.education.year}</span>
+            <span className="education-year">{DATA.education.year}</span>
+            <span className="education-focus-label">Areas of interest</span>
+            <ul className="education-focus" aria-label="Areas of interest">
+              {DATA.education.focusAreas.map((area) => (
+                <li className="education-interest" key={area}>{area}</li>
+              ))}
+            </ul>
           </span>
-          <ArrowUpRight className="education-arrow" aria-hidden="true" />
-        </a>
+          <a
+            className="education-arrow-link"
+            href={DATA.education.href}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Visit University of Waterloo website"
+            title="Visit University of Waterloo"
+          >
+            <ArrowUpRight className="education-arrow" aria-hidden="true" />
+          </a>
+        </div>
       </div>
     </section>
   );
@@ -118,7 +133,7 @@ export default function HomePage() {
 
           <section className="content-section experience-section" id="experience" aria-labelledby="experience-title">
             <div className="section-heading">
-              <h2 id="experience-title">Industry Experience</h2>
+              <h2 id="experience-title">Experience</h2>
             </div>
             <ExperienceList />
           </section>
