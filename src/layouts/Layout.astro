@@ -1,0 +1,43 @@
+---
+import "../styles/global.css";
+import { DATA } from "@/data/resume";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description = DATA.description } = Astro.props;
+const pageTitle = title ? `${title} — ${DATA.name}` : `${DATA.name} — Systems Software`;
+const siteUrl = Astro.site?.toString() ?? "https://yourusername.github.io";
+const canonicalURL = new URL(Astro.url.pathname, siteUrl).toString();
+const basePath = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const pageDescription = description;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#f5f4ef" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" type="image/svg+xml" href={`${basePath}favicon.svg`} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:site_name" content={DATA.name} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
