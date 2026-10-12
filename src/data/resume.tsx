@@ -1,81 +1,72 @@
 /**
- * Portfolio content lives here. These details are transcribed from Haibo's CV.
+ * Personal site content. Keep the wording short and easy to update.
  */
 export type WorkItem = {
   company: string;
   title: string;
   href: string;
   logoUrl: string;
-  logoMark: string;
-  logoColor: string;
   period: string;
 };
 
 export type ProjectItem = {
   title: string;
-  href?: string;
   links: { label: string; href: string }[];
 };
 
 export const DATA = {
   name: "Haibo Sun",
-  roleLabel: "Systems · Low-level software",
   description:
-    "Fourth-year Software Engineering student at the University of Waterloo focused on computer architecture, operating systems, and low-level systems software.",
+    "I’m a fourth-year Software Engineering student at the University of Waterloo. My internships have included systems software, operating systems, firmware, and hardware validation.",
   linkedin: "https://www.linkedin.com/in/h3sun/",
+  github: "https://github.com/Haibo-S",
+  education: {
+    href: "https://uwaterloo.ca/",
+    logoUrl: "logos/university-of-waterloo.png",
+    program: "Software Engineering",
+    year: "4th year",
+  },
   work: [
     {
       company: "NVIDIA",
-      title: "System Software Engineer Intern",
+      title: "System Software Engineer",
       href: "https://www.nvidia.com/",
       logoUrl: "logos/nvidia.svg",
-      logoMark: "N",
-      logoColor: "#76b900",
       period: "May–Aug 2026",
     },
     {
       company: "Tenstorrent",
-      title: "Low-Level Kernel Software Developer Intern",
+      title: "Low-Level Kernel Software Developer",
       href: "https://tenstorrent.com/en",
-      logoUrl: "logos/tenstorrent.ico",
-      logoMark: "tt",
-      logoColor: "#272727",
+      logoUrl: "logos/tenstorrent.png",
       period: "Jan–May 2026",
     },
     {
       company: "Huawei Canada",
-      title: "Real Time Operating Systems Developer Intern",
+      title: "Real-Time Operating Systems Developer",
       href: "https://www.huawei.com/ca/",
       logoUrl: "logos/huawei.svg",
-      logoMark: "H",
-      logoColor: "#cf0a2c",
       period: "May–Aug 2025",
     },
     {
       company: "Untether AI",
-      title: "Systems Software Developer Intern",
-      href: "https://www.arm.com/partners/catalog/untether-ai",
-      logoUrl: "",
-      logoMark: "ua",
-      logoColor: "#5a4280",
+      title: "Systems Software Developer",
+      href: "https://www.linkedin.com/company/untether-ai/",
+      logoUrl: "logos/untether-ai.png",
       period: "Sep–Dec 2024",
     },
     {
       company: "onsemi",
-      title: "Hardware Validation Developer Intern",
+      title: "Hardware Validation Developer",
       href: "https://www.onsemi.com/",
       logoUrl: "logos/onsemi.png",
-      logoMark: "on",
-      logoColor: "#e83b43",
       period: "Jan–Apr 2024",
     },
     {
       company: "Great Circle Solar",
-      title: "Firmware Developer Intern",
+      title: "Firmware Developer",
       href: "https://www.greatcirclesolar.com/",
       logoUrl: "logos/great-circle-solar.png",
-      logoMark: "gc",
-      logoColor: "#4a7151",
       period: "May–Aug 2023",
     },
   ] as WorkItem[],
