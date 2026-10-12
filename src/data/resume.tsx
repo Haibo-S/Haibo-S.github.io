@@ -10,12 +10,24 @@ export type WorkItem = {
   logoStyle?: "wordmark";
 };
 
+export type ProjectItem = {
+  title: string;
+  context: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+  tags: string[];
+  links: { label: string; href: string }[];
+};
+
 export const DATA = {
   name: "Haibo Sun",
   description:
     "I’m Haibo, a fourth-year Software Engineering student at Waterloo. I’m interested in computer architecture, digital design, and systems software near the hardware/software boundary.",
   linkedin: "https://www.linkedin.com/in/h3sun/",
   github: "https://github.com/Haibo-S",
+  email: "h3sun@uwaterloo.ca",
+  resume: "https://drive.google.com/file/d/1M-SLWqrObFI3Ar4eyAqcKVHtuODQTCMr/view?usp=sharing",
   education: {
     href: "https://uwaterloo.ca/",
     logoUrl: "logos/university-of-waterloo.png",
@@ -89,4 +101,40 @@ export const DATA = {
       period: "May–Aug 2023",
     },
   ] as WorkItem[],
+  projects: [
+    {
+      title: "VHDL Traffic-Light Controller",
+      context: "FPGA · Digital design",
+      description:
+        "A finite-state controller for a four-way intersection, implemented in VHDL for an Altera MAX 10 FPGA. It coordinates vehicle signals and responds to pedestrian crossing requests.",
+      image: "images/projects/traffic-controller.svg",
+      imageAlt: "Illustration of an FPGA traffic controller, four-way intersection, signal lights, and a timing trace.",
+      tags: ["VHDL", "MAX 10", "Finite-state machines"],
+      links: [
+        {
+          label: "Source on GitHub",
+          href: "https://github.com/Haibo-S/Traffic-Light-Controller",
+        },
+      ],
+    },
+    {
+      title: "“Haibo” Wearable Assistant",
+      context: "Team project · MakeUofT 2024",
+      description:
+        "A team-built wearable assistant that uses hand gestures and computer vision to control camera and speech features, with a private home-server path for recorded files.",
+      image: "images/projects/wearable-gesture-controls.jpg",
+      imageAlt: "Hand gestures annotated with computer-vision keypoints for the wearable assistant.",
+      tags: ["Raspberry Pi", "OpenCV", "Embedded systems"],
+      links: [
+        {
+          label: "Source on GitHub",
+          href: "https://github.com/KrishPAdmin/MakeUofT-2024/tree/main",
+        },
+        {
+          label: "Project story",
+          href: "https://devpost.com/software/rasp-debuggers",
+        },
+      ],
+    },
+  ] as ProjectItem[],
 } as const;

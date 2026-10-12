@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" role="img" aria-labelledby="title desc">
+  <title id="title">FPGA traffic-light controller illustration</title>
+  <desc id="desc">A four-way intersection with signal lights, a controller board, and a state-transition trace.</desc>
+  <defs>
+    <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0H0V34" fill="none" stroke="#d8d4c8" stroke-width="1" opacity=".52"/>
+    </pattern>
+    <linearGradient id="road" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#293940"/>
+      <stop offset="1" stop-color="#1d3036"/>
+    </linearGradient>
+    <linearGradient id="board" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4ca49"/>
+      <stop offset="1" stop-color="#e8ad25"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="15" stdDeviation="18" flood-color="#26333a" flood-opacity=".16"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="620" fill="#f5f2e9"/>
+  <rect width="1000" height="620" fill="url(#grid)"/>
+  <circle cx="812" cy="104" r="152" fill="#f4d66f" opacity=".24"/>
+  <circle cx="180" cy="522" r="176" fill="#dce8df" opacity=".52"/>
+
+  <g filter="url(#shadow)">
+    <rect x="76" y="66" width="848" height="488" rx="30" fill="#fffdf8" stroke="#e8e1d2" stroke-width="2"/>
+    <text x="112" y="112" fill="#4e594e" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="2.4">DIGITAL CONTROL SYSTEM</text>
+    <text x="112" y="148" fill="#26363a" font-family="Inter,Arial,sans-serif" font-size="25" font-weight="650" letter-spacing="-.7">Traffic, in a finite-state machine</text>
+
+    <g transform="translate(112 182)">
+      <rect width="776" height="272" rx="20" fill="#e8e7dc"/>
+      <rect x="0" y="87" width="776" height="98" rx="8" fill="url(#road)"/>
+      <rect x="322" y="0" width="132" height="272" rx="8" fill="url(#road)"/>
+      <path d="M0 136h322m132 0h322M388 0v88m0 98v88" fill="none" stroke="#f1d576" stroke-width="4" stroke-dasharray="17 14" opacity=".88"/>
+      <path d="M300 87v98m176-98v98M322 67h132m-132 138h132" fill="none" stroke="#f7f4e8" stroke-width="5" stroke-dasharray="7 7" opacity=".92"/>
+      <path d="M272 136h-34m266 0h34M388 53V22m0 197v29" fill="none" stroke="#f8f5e9" stroke-width="2" opacity=".62"/>
+      <path d="M262 124l-13 12 13 12m294-24 13 12-13 12M376 50l12-13 12 13m-24 172 12 13 12-13" fill="none" stroke="#f8f5e9" stroke-width="2.2" opacity=".72"/>
+
+      <g transform="translate(255 101)">
+        <rect width="42" height="70" rx="13" fill="#14252b" stroke="#f4eee0" stroke-width="4"/>
+        <circle cx="21" cy="17" r="7" fill="#e45246"/>
+        <circle cx="21" cy="35" r="7" fill="#d9a93c" opacity=".46"/>
+        <circle cx="21" cy="53" r="7" fill="#55a77f" opacity=".35"/>
+      </g>
+      <g transform="translate(479 101)">
+        <rect width="42" height="70" rx="13" fill="#14252b" stroke="#f4eee0" stroke-width="4"/>
+        <circle cx="21" cy="17" r="7" fill="#e45246" opacity=".34"/>
+        <circle cx="21" cy="35" r="7" fill="#d9a93c" opacity=".42"/>
+        <circle cx="21" cy="53" r="7" fill="#55a77f"/>
+      </g>
+      <g fill="#293940" opacity=".72">
+        <rect x="274" y="28" width="4" height="37" rx="2"/>
+        <rect x="498" y="207" width="4" height="37" rx="2"/>
+      </g>
+      <g fill="#f9f6ed" opacity=".88">
+        <path d="M282 28l-8-9-8 9h6v14h4V28z"/>
+        <path d="M490 244l8 9 8-9h-6v-14h-4v14z"/>
+      </g>
+    </g>
+
+    <g transform="translate(112 477)">
+      <rect width="44" height="44" rx="12" fill="url(#board)"/>
+      <rect x="12" y="12" width="20" height="20" rx="4" fill="#27383c"/>
+      <path d="M7 10H0m7 9H0m7 9H0m37-18h7m-7 9h7m-7 9h7M10 7V0m9 7V0m9 7V0m-18 37v7m9-7v7m9-7v7" stroke="#c28f1c" stroke-width="2.4" stroke-linecap="round"/>
+      <text x="58" y="18" fill="#344447" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="700">MAX 10 FPGA</text>
+      <text x="58" y="38" fill="#70766d" font-family="Inter,Arial,sans-serif" font-size="13" letter-spacing=".4">VHDL  ·  PEDESTRIAN REQUESTS</text>
+    </g>
+
+    <g transform="translate(714 482)">
+      <rect width="174" height="36" rx="18" fill="#f7edc8"/>
+      <circle cx="19" cy="18" r="4" fill="#c49925"/>
+      <text x="32" y="23" fill="#645629" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="650" letter-spacing=".4">FSM  →  SIGNALS</text>
+    </g>
+  </g>
+</svg>
