@@ -12,22 +12,72 @@ import HomePage from "@/components/HomePage";
   (() => {
     const hero = document.querySelector(".hero[data-background-images]");
     if (!(hero instanceof HTMLElement)) return;
+    const nextLayer = hero.querySelector(".hero-background-next");
+    if (!(nextLayer instanceof HTMLElement)) return;
 
     const images = JSON.parse(hero.dataset.backgroundImages || "[]");
     if (!images.length) return;
 
     const key = "haibo-about-background";
+    const shuffle = (items) => {
+      const shuffled = [...items];
+      for (let i = shuffled.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled;
+    };
+
     let previous = "";
     try {
       previous = sessionStorage.getItem(key) || "";
     } catch {}
 
     const choices = images.length > 1 ? images.filter((image) => image !== previous) : images;
-    const selected = choices[Math.floor(Math.random() * choices.length)];
-    hero.style.setProperty("--about-photo", `url("${selected}")`);
+    let current = choices[Math.floor(Math.random() * choices.length)];
+    const setCurrentPhoto = (image) => {
+      hero.style.setProperty("--about-photo", `url("${image}")`);
+      try {
+        sessionStorage.setItem(key, image);
+      } catch {}
+    };
+    setCurrentPhoto(current);
 
-    try {
-      sessionStorage.setItem(key, selected);
-    } catch {}
+    let order = [];
+    const nextPhoto = () => {
+      if (!order.length) order = shuffle(images.filter((image) => image !== current));
+      return order.pop() || current;
+    };
+    let queued = nextPhoto();
+    let queuedImage = new Image();
+    queuedImage.src = queued;
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const transitionDuration = reduceMotion ? 10 : 920;
+    window.setInterval(() => {
+      const next = queued;
+      const image = queuedImage;
+      queued = nextPhoto();
+      queuedImage = new Image();
+      queuedImage.src = queued;
+
+      const crossfade = () => {
+        nextLayer.style.setProperty("--about-next-photo", `url("${next}")`);
+        window.requestAnimationFrame(() => window.requestAnimationFrame(() => {
+          hero.classList.add("is-transitioning");
+          window.setTimeout(() => {
+            current = next;
+            setCurrentPhoto(current);
+            hero.classList.remove("is-transitioning");
+          }, transitionDuration);
+        }));
+      };
+
+      if (image.complete) {
+        if (image.naturalWidth) crossfade();
+      } else {
+        image.addEventListener("load", crossfade, { once: true });
+      }
+    }, 5000);
   })();
 </script>

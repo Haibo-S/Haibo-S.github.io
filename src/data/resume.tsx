@@ -35,6 +35,14 @@ export const DATA = {
     "images/about-bg-02.webp",
     "images/about-bg-03.webp",
     "images/about-bg-04.webp",
+    "images/about-bg-05.webp",
+    "images/about-bg-06.webp",
+    "images/about-bg-07.webp",
+    "images/about-bg-08.webp",
+    "images/about-bg-09.webp",
+    "images/about-bg-10.webp",
+    "images/about-bg-11.webp",
+    "images/about-bg-12.webp",
   ],
   work: [
     {

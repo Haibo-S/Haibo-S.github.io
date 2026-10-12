@@ -121,6 +121,7 @@ export default function HomePage() {
             aria-labelledby="hero-title"
             data-background-images={JSON.stringify(backgroundImages)}
           >
+            <div className="hero-background-next" aria-hidden="true" />
             <div className="hero-inner">
               <div className="hero-copy">
                 <h1 id="hero-title"><span>{DATA.name}</span></h1>
