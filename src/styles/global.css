@@ -235,7 +235,7 @@ a:focus-visible {
   overflow: hidden;
 }
 
-.education-logo img {
+.education-row .education-logo img {
   width: 140%;
   height: auto;
   max-height: none;
@@ -612,7 +612,7 @@ a:focus-visible {
     height: 70px;
   }
 
-  .education-logo img {
+  .education-row .education-logo img {
     width: 140%;
   }
 
@@ -698,7 +698,7 @@ a:focus-visible {
     height: 60px;
   }
 
-  .education-logo img {
+  .education-row .education-logo img {
     width: 140%;
   }
 
@@ -869,7 +869,7 @@ a:focus-visible {
     height: 54px;
   }
 
-  .education-logo img {
+  .education-row .education-logo img {
     width: 140%;
   }
 
