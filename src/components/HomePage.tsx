@@ -28,33 +28,37 @@ function SocialLinks() {
 
 function Education() {
   return (
-    <section className="education-section" id="education" aria-labelledby="education-title">
-      <div className="education-section-inner">
+    <section className="content-section education-section" id="education" aria-labelledby="education-title">
+      <div className="section-heading">
         <h2 id="education-title">Education</h2>
-        <div className="education-card">
-          <img src={asset(DATA.education.logoUrl)} alt="University of Waterloo" />
-          <span className="education-divider" aria-hidden="true" />
-          <span className="education-copy">
-            <strong>{DATA.education.program}</strong>
-            <span className="education-year">{DATA.education.year}</span>
-            <span className="education-focus-label">Areas of interest</span>
-            <ul className="education-focus" aria-label="Areas of interest">
-              {DATA.education.focusAreas.map((area) => (
-                <li className="education-interest" key={area}>{area}</li>
-              ))}
-            </ul>
-          </span>
-          <a
-            className="education-arrow-link"
-            href={DATA.education.href}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Visit University of Waterloo website"
-            title="Visit University of Waterloo"
-          >
-            <ArrowUpRight className="education-arrow" aria-hidden="true" />
-          </a>
-        </div>
+      </div>
+      <div className="education-row">
+        <span className="company-logo education-logo" aria-hidden="true">
+          <img src={asset(DATA.education.logoUrl)} alt="" />
+        </span>
+        <span className="education-primary">
+          <span className="education-school">{DATA.education.school}</span>
+          <span className="education-degree">{DATA.education.program}</span>
+          <span className="education-meta">{DATA.education.programType} · {DATA.education.period}</span>
+        </span>
+        <span className="education-coursework">
+          <span className="education-coursework-label">Relevant courseworks</span>
+          <ul className="education-coursework-list">
+            {DATA.education.coursework.map((course) => (
+              <li key={course}>{course}</li>
+            ))}
+          </ul>
+        </span>
+        <a
+          className="education-arrow-link"
+          href={DATA.education.href}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Visit University of Waterloo website"
+          title="Visit University of Waterloo"
+        >
+          <ArrowUpRight className="education-arrow" aria-hidden="true" />
+        </a>
       </div>
     </section>
   );
@@ -103,8 +107,8 @@ export default function HomePage() {
         </a>
         <nav aria-label="Main navigation" className="site-nav">
           <a href="#about">About</a>
-          <a href="#education">Education</a>
           <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
         </nav>
         <SocialLinks />
       </header>
@@ -129,14 +133,14 @@ export default function HomePage() {
             </div>
           </section>
 
-          <Education />
-
           <section className="content-section experience-section" id="experience" aria-labelledby="experience-title">
             <div className="section-heading">
               <h2 id="experience-title">Experience</h2>
             </div>
             <ExperienceList />
           </section>
+
+          <Education />
         </main>
 
         <footer className="site-footer">

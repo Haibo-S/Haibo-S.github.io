@@ -208,122 +208,123 @@ a:focus-visible {
 }
 
 .education-section {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
+  border-top: 0;
+}
+
+.education-row {
+  display: grid;
+  grid-template-columns: 126px minmax(0, 0.95fr) minmax(0, 1.05fr) 28px;
+  align-items: center;
+  gap: clamp(16px, 2.4vw, 30px);
+  min-height: 118px;
+  border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  background: #fff;
-  padding: 22px max(36px, calc((100vw - 1160px) / 2));
-  scroll-margin-top: 110px;
+  padding: 17px 12px 17px 8px;
+  transition: background-color 160ms ease, padding 160ms ease;
 }
 
-.education-section-inner {
-  display: grid;
-  grid-template-columns: 138px minmax(0, 1fr);
-  align-items: center;
-  gap: clamp(24px, 4vw, 48px);
-  width: min(1160px, 100%);
-  margin: 0 auto;
+.education-row:hover {
+  background: #fffdf7;
+  padding-right: 7px;
+  padding-left: 13px;
 }
 
-.education-section h2 {
-  flex: 0 0 auto;
-  margin: 0;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: -0.025em;
+.education-logo {
+  width: 112px;
 }
 
-.education-card {
-  display: grid;
-  grid-template-columns: 148px 1px minmax(0, 1fr) 28px;
-  align-items: center;
-  gap: 16px;
-  width: 100%;
-  max-width: 100%;
-  min-height: 112px;
-  border: 1px solid rgba(230, 225, 212, 0.92);
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.91);
-  padding: 14px 16px;
-  box-shadow: 0 10px 32px rgba(43, 39, 28, 0.07);
-}
-
-.education-card > img {
-  display: block;
-  width: 148px;
+.education-logo img {
+  width: 112px;
   height: auto;
-  max-height: 62px;
-  object-fit: contain;
+  max-height: 54px;
 }
 
-.education-divider {
-  width: 1px;
-  height: 52px;
-  background: #e7e2d6;
-}
-
-.education-copy {
+.education-primary,
+.education-coursework {
   display: flex;
   min-width: 0;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
 }
 
-.education-copy strong {
-  font-size: 19px;
-  font-weight: 700;
+.education-primary {
+  gap: 3px;
 }
 
-.education-year {
-  color: #56534d;
-  font-size: 17px;
-  font-weight: 550;
+.education-school {
+  color: #514d43;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
-.education-focus-label {
-  margin-top: 5px;
-  color: #746f64;
+.education-degree {
+  color: #282720;
+  font-size: clamp(19px, 1.8vw, 22px);
+  font-weight: 450;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+}
+
+.education-meta {
+  color: #69655c;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.education-coursework {
+  gap: 5px;
+}
+
+.education-coursework-label {
+  color: #766f5e;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.education-focus {
+.education-coursework-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 5px 12px;
   margin: 0;
   padding: 0;
+  color: #4d4941;
+  font-size: 12.5px;
+  line-height: 1.45;
   list-style: none;
 }
 
-.education-interest {
-  border: 1px solid #eee5c9;
-  border-radius: 999px;
-  background: #fffdf7;
-  padding: 5px 8px;
-  color: #4b473e;
-  font-size: 12px;
-  font-weight: 550;
-  line-height: 1.2;
+.education-coursework-list li {
+  position: relative;
+  padding-left: 10px;
   white-space: nowrap;
+}
+
+.education-coursework-list li::before {
+  position: absolute;
+  top: 0.55em;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #d6aa28;
+  content: "";
 }
 
 .education-arrow-link {
   display: grid;
-  width: 28px;
+  width: 100%;
+  max-width: 28px;
   height: 28px;
   place-items: center;
   justify-self: center;
-  color: #9b7412;
+  color: #8e6b12;
 }
 
 .education-arrow {
-  width: 18px;
-  height: 18px;
-  color: #9b7412;
+  width: 22px;
+  height: 22px;
   transition: transform 160ms ease;
 }
 
@@ -474,10 +475,10 @@ a:focus-visible {
 }
 
 .experience-company {
-  color: #252420;
-  font-size: 18px;
-  font-weight: 740;
-  letter-spacing: -0.025em;
+  color: #4a4740;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.008em;
 }
 
 .experience-role {
@@ -568,15 +569,6 @@ a:focus-visible {
     padding: 6px 26px;
   }
 
-  .education-section {
-    padding: 20px 26px;
-  }
-
-  .education-section-inner {
-    grid-template-columns: 128px minmax(0, 1fr);
-    gap: 24px;
-  }
-
   .site-nav {
     justify-content: center;
     padding: 0 0 4px;
@@ -598,14 +590,20 @@ a:focus-visible {
     font-size: 46px;
   }
 
-  .education-card {
-    grid-template-columns: 132px 1px minmax(0, 1fr) 26px;
-    gap: 12px;
-    padding: 12px;
+  .education-row {
+    grid-template-columns: 96px minmax(0, 1fr) minmax(0, 1.05fr) 24px;
+    gap: 16px;
+    padding-right: 4px;
+    padding-left: 4px;
   }
 
-  .education-card > img {
-    width: 132px;
+  .education-logo {
+    width: 92px;
+  }
+
+  .education-logo img {
+    width: 92px;
+    max-height: 48px;
   }
 
   .experience-row {
@@ -647,21 +645,6 @@ a:focus-visible {
     padding: 8px 18px;
   }
 
-  .education-section {
-    padding: 18px 18px 20px;
-    scroll-margin-top: 108px;
-  }
-
-  .education-section-inner {
-    grid-template-columns: 1fr;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .education-section h2 {
-    font-size: 18px;
-  }
-
   .site-nav {
     gap: clamp(18px, 7vw, 36px);
     padding: 7px 0 0;
@@ -684,32 +667,52 @@ a:focus-visible {
     font-size: 42px;
   }
 
-  .education-card {
-    grid-template-columns: 108px 1px minmax(0, 1fr) 26px;
-    gap: 10px;
-    min-height: 100px;
-    padding: 10px;
+  .education-row {
+    grid-template-columns: 58px minmax(0, 1fr) 24px;
+    grid-template-areas:
+      "logo primary arrow"
+      "logo coursework coursework";
+    align-items: start;
+    gap: 10px 14px;
+    padding: 17px 3px;
   }
 
-  .education-card > img {
-    width: 108px;
+  .education-row:hover {
+    padding-right: 3px;
+    padding-left: 3px;
   }
 
-  .education-divider {
-    height: 45px;
+  .education-logo {
+    grid-area: logo;
+    width: 58px;
+    height: 54px;
   }
 
-  .education-copy strong {
-    font-size: 15px;
+  .education-logo img {
+    width: 58px;
+    max-height: 42px;
   }
 
-  .education-year {
-    font-size: 14px;
+  .education-primary {
+    grid-area: primary;
   }
 
-  .education-interest {
-    font-size: 11px;
-    padding: 4px 7px;
+  .education-coursework {
+    grid-area: coursework;
+  }
+
+  .education-degree {
+    font-size: 20px;
+  }
+
+  .education-meta {
+    font-size: 13px;
+  }
+
+  .education-arrow-link {
+    grid-area: arrow;
+    width: 24px;
+    height: 24px;
   }
 
   .hero-intro {
@@ -757,6 +760,17 @@ a:focus-visible {
     height: 50px;
   }
 
+  .education-row .education-logo {
+    width: 58px;
+    height: 54px;
+  }
+
+  .education-row .education-logo img {
+    width: 58px;
+    height: auto;
+    max-height: 42px;
+  }
+
   .experience-row-wordmark .company-logo img {
     width: 48px;
     max-height: 34px;
@@ -801,11 +815,6 @@ a:focus-visible {
     padding-left: 15px;
   }
 
-  .education-section {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-
   .wordmark {
     font-size: 14px;
   }
@@ -834,40 +843,38 @@ a:focus-visible {
     font-size: 40px;
   }
 
-  .education-card {
-    grid-template-columns: 78px 1px minmax(0, 1fr) 24px;
-    gap: 7px;
-    padding: 9px;
+  .education-row {
+    grid-template-columns: 46px minmax(0, 1fr) 22px;
+    column-gap: 10px;
   }
 
-  .education-card > img {
-    width: 78px;
+  .education-logo {
+    width: 46px;
   }
 
-  .education-arrow-link {
-    width: 24px;
-    height: 24px;
+  .education-logo img {
+    width: 46px;
+    max-height: 36px;
   }
 
-  .education-copy strong {
-    font-size: 14px;
+  .education-school {
+    font-size: 15px;
   }
 
-  .education-year {
-    font-size: 13px;
+  .education-degree {
+    font-size: 18px;
   }
 
-  .education-focus-label {
+  .education-meta {
+    font-size: 12px;
+  }
+
+  .education-coursework-label {
     font-size: 10px;
   }
 
-  .education-focus {
-    gap: 5px;
-  }
-
-  .education-interest {
-    font-size: 10px;
-    padding: 4px 6px;
+  .education-coursework-list {
+    font-size: 12px;
   }
 
   .experience-row {
@@ -884,6 +891,16 @@ a:focus-visible {
   .company-logo img {
     width: 44px;
     height: 44px;
+  }
+
+  .education-row .education-logo {
+    width: 46px;
+  }
+
+  .education-row .education-logo img {
+    width: 46px;
+    height: auto;
+    max-height: 36px;
   }
 
   .experience-row-wordmark .company-logo img {

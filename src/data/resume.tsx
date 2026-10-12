@@ -19,9 +19,18 @@ export const DATA = {
   education: {
     href: "https://uwaterloo.ca/",
     logoUrl: "logos/university-of-waterloo.png",
-    program: "Software Engineering",
-    year: "4th year",
-    focusAreas: ["Computer architecture", "Digital design", "Systems software"],
+    school: "University of Waterloo",
+    program: "Honours Bachelor of Software Engineering",
+    programType: "Co-operative Program",
+    period: "Sep 2022 – Apr 2027 (expected)",
+    coursework: [
+      "Computer Architecture",
+      "Digital Hardware Systems",
+      "Computer Arithmetic Hardware",
+      "Operating Systems",
+      "On-Chip Interconnect",
+      "Reconfigurable Computing",
+    ],
   },
   aboutBackgrounds: [
     "images/about-bg-01.webp",
