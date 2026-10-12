@@ -213,7 +213,7 @@ a:focus-visible {
 
 .education-row {
   display: grid;
-  grid-template-columns: 126px minmax(0, 0.95fr) minmax(0, 1.05fr) 28px;
+  grid-template-columns: 148px minmax(0, 0.95fr) minmax(0, 1.05fr) 28px;
   align-items: center;
   gap: clamp(16px, 2.4vw, 30px);
   min-height: 118px;
@@ -230,13 +230,15 @@ a:focus-visible {
 }
 
 .education-logo {
-  width: 112px;
+  width: 148px;
+  height: 74px;
+  overflow: hidden;
 }
 
 .education-logo img {
-  width: 112px;
+  width: 140%;
   height: auto;
-  max-height: 54px;
+  max-height: none;
 }
 
 .education-primary,
@@ -276,8 +278,8 @@ a:focus-visible {
 }
 
 .education-coursework-label {
-  color: #766f5e;
-  font-size: 11px;
+  color: #655c47;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -289,9 +291,9 @@ a:focus-visible {
   gap: 5px 12px;
   margin: 0;
   padding: 0;
-  color: #4d4941;
-  font-size: 12.5px;
-  line-height: 1.45;
+  color: #37352f;
+  font-size: 18px;
+  line-height: 1.4;
   list-style: none;
 }
 
@@ -339,13 +341,21 @@ a:focus-visible {
 }
 
 .hero-intro {
-  max-width: 790px;
+  width: fit-content;
+  max-width: min(790px, 100%);
   margin: 0;
   color: #111111;
   font-size: clamp(18px, 1.65vw, 21px);
   font-weight: 450;
   line-height: 1.68;
   text-wrap: pretty;
+  border: 1px solid rgba(227, 220, 202, 0.94);
+  border-left: 4px solid var(--yellow);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.94);
+  padding: clamp(16px, 2vw, 22px) clamp(18px, 2.4vw, 26px);
+  box-shadow: 0 14px 40px rgba(38, 33, 20, 0.13);
+  backdrop-filter: blur(14px);
   animation: about-copy-enter 760ms cubic-bezier(0.2, 0.7, 0.2, 1) 190ms both;
 }
 
@@ -591,19 +601,19 @@ a:focus-visible {
   }
 
   .education-row {
-    grid-template-columns: 96px minmax(0, 1fr) minmax(0, 1.05fr) 24px;
+    grid-template-columns: 134px minmax(0, 1fr) minmax(0, 1.05fr) 24px;
     gap: 16px;
     padding-right: 4px;
     padding-left: 4px;
   }
 
-  .education-logo {
-    width: 92px;
+  .education-row .education-logo {
+    width: 134px;
+    height: 70px;
   }
 
   .education-logo img {
-    width: 92px;
-    max-height: 48px;
+    width: 140%;
   }
 
   .experience-row {
@@ -668,7 +678,7 @@ a:focus-visible {
   }
 
   .education-row {
-    grid-template-columns: 58px minmax(0, 1fr) 24px;
+    grid-template-columns: 118px minmax(0, 1fr) 24px;
     grid-template-areas:
       "logo primary arrow"
       "logo coursework coursework";
@@ -682,15 +692,14 @@ a:focus-visible {
     padding-left: 3px;
   }
 
-  .education-logo {
+  .education-row .education-logo {
     grid-area: logo;
-    width: 58px;
-    height: 54px;
+    width: 118px;
+    height: 60px;
   }
 
   .education-logo img {
-    width: 58px;
-    max-height: 42px;
+    width: 140%;
   }
 
   .education-primary {
@@ -703,6 +712,14 @@ a:focus-visible {
 
   .education-degree {
     font-size: 20px;
+  }
+
+  .education-coursework-label {
+    font-size: 13px;
+  }
+
+  .education-coursework-list {
+    font-size: 17px;
   }
 
   .education-meta {
@@ -761,14 +778,13 @@ a:focus-visible {
   }
 
   .education-row .education-logo {
-    width: 58px;
-    height: 54px;
+    width: 118px;
+    height: 60px;
   }
 
   .education-row .education-logo img {
-    width: 58px;
+    width: 140%;
     height: auto;
-    max-height: 42px;
   }
 
   .experience-row-wordmark .company-logo img {
@@ -844,17 +860,17 @@ a:focus-visible {
   }
 
   .education-row {
-    grid-template-columns: 46px minmax(0, 1fr) 22px;
+    grid-template-columns: 100px minmax(0, 1fr) 22px;
     column-gap: 10px;
   }
 
-  .education-logo {
-    width: 46px;
+  .education-row .education-logo {
+    width: 100px;
+    height: 54px;
   }
 
   .education-logo img {
-    width: 46px;
-    max-height: 36px;
+    width: 140%;
   }
 
   .education-school {
@@ -870,11 +886,11 @@ a:focus-visible {
   }
 
   .education-coursework-label {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .education-coursework-list {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .experience-row {
@@ -894,13 +910,13 @@ a:focus-visible {
   }
 
   .education-row .education-logo {
-    width: 46px;
+    width: 100px;
+    height: 54px;
   }
 
   .education-row .education-logo img {
-    width: 46px;
+    width: 140%;
     height: auto;
-    max-height: 36px;
   }
 
   .experience-row-wordmark .company-logo img {

@@ -26,10 +26,8 @@ export const DATA = {
     coursework: [
       "Computer Architecture",
       "Digital Hardware Systems",
-      "Computer Arithmetic Hardware",
       "Operating Systems",
       "On-Chip Interconnect",
-      "Reconfigurable Computing",
     ],
   },
   aboutBackgrounds: [
