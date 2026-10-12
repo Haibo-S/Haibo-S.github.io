@@ -231,7 +231,7 @@ a:focus-visible {
   content: "";
 }
 
-.education-section {
+.content-section.education-section {
   border-top: 0;
 }
 
