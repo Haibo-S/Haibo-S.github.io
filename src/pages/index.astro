@@ -7,3 +7,27 @@ import HomePage from "@/components/HomePage";
 <Layout>
   <HomePage />
 </Layout>
+
+<script is:inline>
+  (() => {
+    const hero = document.querySelector(".hero[data-background-images]");
+    if (!(hero instanceof HTMLElement)) return;
+
+    const images = JSON.parse(hero.dataset.backgroundImages || "[]");
+    if (!images.length) return;
+
+    const key = "haibo-about-background";
+    let previous = "";
+    try {
+      previous = sessionStorage.getItem(key) || "";
+    } catch {}
+
+    const choices = images.length > 1 ? images.filter((image) => image !== previous) : images;
+    const selected = choices[Math.floor(Math.random() * choices.length)];
+    hero.style.setProperty("--about-photo", `url("${selected}")`);
+
+    try {
+      sessionStorage.setItem(key, selected);
+    } catch {}
+  })();
+</script>

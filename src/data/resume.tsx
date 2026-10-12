@@ -7,17 +7,13 @@ export type WorkItem = {
   href: string;
   logoUrl: string;
   period: string;
-};
-
-export type ProjectItem = {
-  title: string;
-  links: { label: string; href: string }[];
+  logoStyle?: "wordmark";
 };
 
 export const DATA = {
   name: "Haibo Sun",
   description:
-    "I’m a fourth-year Software Engineering student at the University of Waterloo. My internships have included systems software, operating systems, firmware, and hardware validation.",
+    "I’m Haibo, a fourth-year Software Engineering student at the University of Waterloo. I’m interested in computer architecture, digital design, and systems software, especially where hardware and software meet. I like building performance-oriented systems and understanding how they work end to end—from digital logic and interconnects through kernels, operating systems, and firmware. My co-op experience spans system and kernel software, real-time operating systems, digital design and NoC/interconnects, hardware validation, and firmware at NVIDIA, Tenstorrent, Huawei Canada, Untether AI, onsemi, and Great Circle Solar.",
   linkedin: "https://www.linkedin.com/in/h3sun/",
   github: "https://github.com/Haibo-S",
   education: {
@@ -26,6 +22,12 @@ export const DATA = {
     program: "Software Engineering",
     year: "4th year",
   },
+  aboutBackgrounds: [
+    "images/about-bg-01.webp",
+    "images/about-bg-02.webp",
+    "images/about-bg-03.webp",
+    "images/about-bg-04.webp",
+  ],
   work: [
     {
       company: "NVIDIA",
@@ -59,7 +61,8 @@ export const DATA = {
       company: "onsemi",
       title: "Hardware Validation Developer",
       href: "https://www.onsemi.com/",
-      logoUrl: "logos/onsemi.png",
+      logoUrl: "logos/onsemi.svg",
+      logoStyle: "wordmark",
       period: "Jan–Apr 2024",
     },
     {
@@ -70,18 +73,4 @@ export const DATA = {
       period: "May–Aug 2023",
     },
   ] as WorkItem[],
-  projects: [
-    {
-      title: "ARM Real-Time Executive",
-      links: [{ label: "GitHub", href: "https://github.com/Haibo-S/ARM-Real-Time-Executive" }],
-    },
-    {
-      title: "Torus-NoC",
-      links: [{ label: "GitHub", href: "https://github.com/Haibo-S/Torus-NoC" }],
-    },
-    {
-      title: "Pipelined RISC-V Processor",
-      links: [{ label: "GitHub", href: "https://github.com/Haibo-S/Pipelined-RISC-V-Processor" }],
-    },
-  ] as ProjectItem[],
 } as const;

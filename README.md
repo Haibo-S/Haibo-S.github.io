@@ -1,18 +1,19 @@
 # Haibo Sun — personal site
 
-A small, photo-led personal portfolio built with Astro and based on the [Starfolio template](https://github.com/webrating/starfolio). The page has a short introduction, Waterloo education mark, internship history, and selected project links. Its palette is white with warm yellow accents, and the type uses the visitor’s clean system sans-serif fonts.
+A personal portfolio built with Astro and based on the [Starfolio template](https://github.com/webrating/starfolio). It has an introduction, a prominent Waterloo education panel, and a large single-column industry experience list. The About background randomly selects one of four supplied landscape photographs on each page load; the portrait remains a separate square image.
 
 ## Edit the content
 
-Personal details, education, roles, dates, and project links are in [`src/data/resume.tsx`](src/data/resume.tsx). Photos and organization marks live in `public/images/` and `public/logos/`.
+Personal details, education, roles, dates, and background photo choices are in [`src/data/resume.tsx`](src/data/resume.tsx). Photos and organization marks live in `public/images/` and `public/logos/`.
 
-The attached portrait is optimized as a WebP image, and the coastal photo appears as a faint decorative haze behind the portrait. EXIF metadata has been removed from the site images.
+The attached portrait is optimized as a WebP image, and the supplied landscape photos rotate as a faint, full-width background behind the introduction. EXIF metadata has been removed from the site images.
 
 ## Logo sources
 
 - University of Waterloo: [official brand downloads](https://uwaterloo.ca/brand/uw-logos/university-logos/all)
 - Untether AI: [company LinkedIn page](https://www.linkedin.com/company/untether-ai/)
-- Tenstorrent, Great Circle Solar, and onsemi: company website marks
+- onsemi: official full-color wordmark from [onsemi.com](https://www.onsemi.com/images/logo/onsemi_logo_full_color.svg)
+- Tenstorrent and Great Circle Solar: company website marks
 - NVIDIA and Huawei: locally bundled brand symbols
 
 The organization marks identify past workplaces and the university; they are not endorsements. They are stored locally so the site does not depend on third-party image requests.

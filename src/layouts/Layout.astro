@@ -7,7 +7,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = DATA.description } = Astro.props;
+const { title, description = "Haibo Sun is a fourth-year Software Engineering student at the University of Waterloo interested in computer architecture, digital design, and systems software." } = Astro.props;
 const pageTitle = title ? `${title} — ${DATA.name}` : `${DATA.name} — Software Engineering`;
 const siteUrl = Astro.site?.toString() ?? "https://yourusername.github.io";
 const canonicalURL = new URL(Astro.url.pathname, siteUrl).toString();
