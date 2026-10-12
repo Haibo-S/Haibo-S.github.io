@@ -28,17 +28,19 @@ function SocialLinks() {
 
 function Education() {
   return (
-    <section className="education-panel" id="education" aria-labelledby="education-title">
-      <h2 id="education-title">Education</h2>
-      <a className="education-card" href={DATA.education.href} target="_blank" rel="noreferrer">
-        <img src={asset(DATA.education.logoUrl)} alt="University of Waterloo" />
-        <span className="education-divider" aria-hidden="true" />
-        <span className="education-copy">
-          <strong>{DATA.education.program}</strong>
-          <span>{DATA.education.year}</span>
-        </span>
-        <ArrowUpRight className="education-arrow" aria-hidden="true" />
-      </a>
+    <section className="education-section" id="education" aria-labelledby="education-title">
+      <div className="education-section-inner">
+        <h2 id="education-title">Education</h2>
+        <a className="education-card" href={DATA.education.href} target="_blank" rel="noreferrer">
+          <img src={asset(DATA.education.logoUrl)} alt="University of Waterloo" />
+          <span className="education-divider" aria-hidden="true" />
+          <span className="education-copy">
+            <strong>{DATA.education.program}</strong>
+            <span>{DATA.education.year}</span>
+          </span>
+          <ArrowUpRight className="education-arrow" aria-hidden="true" />
+        </a>
+      </div>
     </section>
   );
 }
@@ -60,7 +62,7 @@ function ExperienceList() {
           </span>
           <span className="experience-copy">
             <span className="experience-company">{work.company}</span>
-            <strong className="experience-role">{work.title}</strong>
+            <span className="experience-role">{work.title}</span>
           </span>
           <span className="experience-period">{work.period}</span>
           <ArrowUpRight className="row-arrow" aria-hidden="true" />
@@ -74,7 +76,7 @@ export default function HomePage() {
   const backgroundImages = DATA.aboutBackgrounds.map(asset);
 
   return (
-    <div className="site-shell">
+    <>
       <header className="site-header">
         <a className="wordmark" href="#about" aria-label={`${DATA.name}, home`}>
           <span className="wordmark-mark" aria-hidden="true">H</span>
@@ -88,41 +90,43 @@ export default function HomePage() {
         <SocialLinks />
       </header>
 
-      <main>
-        <section
-          className="hero"
-          id="about"
-          aria-labelledby="hero-title"
-          data-background-images={JSON.stringify(backgroundImages)}
-        >
-          <div className="hero-inner">
-            <div className="hero-copy">
-              <h1 id="hero-title"><span>{DATA.name}</span></h1>
-              <Education />
-              <p className="hero-intro">{DATA.description}</p>
-              <a className="scroll-link" href="#experience">
-                Explore my experience <ArrowDownRight aria-hidden="true" />
-              </a>
+      <div className="site-shell">
+        <main>
+          <Education />
+          <section
+            className="hero"
+            id="about"
+            aria-labelledby="hero-title"
+            data-background-images={JSON.stringify(backgroundImages)}
+          >
+            <div className="hero-inner">
+              <div className="hero-copy">
+                <h1 id="hero-title"><span>{DATA.name}</span></h1>
+                <p className="hero-intro">{DATA.description}</p>
+                <a className="scroll-link" href="#experience">
+                  Explore my experience <ArrowDownRight aria-hidden="true" />
+                </a>
+              </div>
+
+              <figure className="hero-photo">
+                <img src={asset("images/haibo-sun.webp")} alt="Haibo at the Golden Gate Bridge" />
+              </figure>
             </div>
+          </section>
 
-            <figure className="hero-photo">
-              <img src={asset("images/haibo-sun.webp")} alt="Haibo at the Golden Gate Bridge" />
-            </figure>
-          </div>
-        </section>
+          <section className="content-section experience-section" id="experience" aria-labelledby="experience-title">
+            <div className="section-heading">
+              <h2 id="experience-title">Industry Experience</h2>
+            </div>
+            <ExperienceList />
+          </section>
+        </main>
 
-        <section className="content-section experience-section" id="experience" aria-labelledby="experience-title">
-          <div className="section-heading">
-            <h2 id="experience-title">Industry Experience</h2>
-          </div>
-          <ExperienceList />
-        </section>
-      </main>
-
-      <footer className="site-footer">
-        <span>© {new Date().getFullYear()} {DATA.name}</span>
-        <SocialLinks />
-      </footer>
-    </div>
+        <footer className="site-footer">
+          <span>© {new Date().getFullYear()} {DATA.name}</span>
+          <SocialLinks />
+        </footer>
+      </div>
+    </>
   );
 }

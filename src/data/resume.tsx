@@ -13,7 +13,7 @@ export type WorkItem = {
 export const DATA = {
   name: "Haibo Sun",
   description:
-    "I’m Haibo, a fourth-year Software Engineering student at the University of Waterloo. I’m interested in computer architecture, digital design, and systems software, especially where hardware and software meet. I like building performance-oriented systems and understanding how they work end to end—from digital logic and interconnects through kernels, operating systems, and firmware. My co-op experience spans system and kernel software, real-time operating systems, digital design and NoC/interconnects, hardware validation, and firmware at NVIDIA, Tenstorrent, Huawei Canada, Untether AI, onsemi, and Great Circle Solar.",
+    "I’m Haibo, a fourth-year Software Engineering student at Waterloo. I’m interested in computer architecture, digital design, and systems software near the hardware/software boundary.",
   linkedin: "https://www.linkedin.com/in/h3sun/",
   github: "https://github.com/Haibo-S",
   education: {
