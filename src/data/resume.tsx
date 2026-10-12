@@ -103,36 +103,47 @@ export const DATA = {
   ] as WorkItem[],
   projects: [
     {
-      title: "VHDL Traffic-Light Controller",
-      context: "FPGA · Digital design",
+      title: "x86-OS",
+      context: "Operating systems · x86",
       description:
-        "A finite-state controller for a four-way intersection, implemented in VHDL for an Altera MAX 10 FPGA. It coordinates vehicle signals and responds to pedestrian crossing requests.",
-      image: "images/projects/traffic-controller.svg",
-      imageAlt: "Illustration of an FPGA traffic controller, four-way intersection, signal lights, and a timing trace.",
-      tags: ["VHDL", "MAX 10", "Finite-state machines"],
+        "A small 32-bit x86 operating system built from scratch in C. It brings together multitasking, virtual memory, privilege levels, system calls, and a shell for loading programs.",
+      image: "images/projects/x86-os.svg",
+      imageAlt: "A visual overview of the x86-OS kernel, process memory, and a booted terminal.",
+      tags: ["C", "32-bit x86", "Virtual memory"],
       links: [
         {
           label: "Source on GitHub",
-          href: "https://github.com/Haibo-S/Traffic-Light-Controller",
+          href: "https://github.com/Haibo-S/x86-OS",
         },
       ],
     },
     {
-      title: "“Haibo” Wearable Assistant",
-      context: "Team project · MakeUofT 2024",
+      title: "C-Architect Compiler",
+      context: "Compiler · MIPS",
       description:
-        "A team-built wearable assistant that uses hand gestures and computer vision to control camera and speech features, with a private home-server path for recorded files.",
-      image: "images/projects/wearable-gesture-controls.jpg",
-      imageAlt: "Hand gestures annotated with computer-vision keypoints for the wearable assistant.",
-      tags: ["Raspberry Pi", "OpenCV", "Embedded systems"],
+        "A compiler for WLP4, a subset of C, paired with a MIPS assembler. The compiler scans and parses source, checks types, then generates assembly that the assembler turns into machine code.",
+      image: "images/projects/c-architect-compiler.svg",
+      imageAlt: "A compiler pipeline from WLP4 source code through parsing to MIPS instructions and machine code.",
+      tags: ["C++", "WLP4", "MIPS"],
       links: [
         {
           label: "Source on GitHub",
-          href: "https://github.com/KrishPAdmin/MakeUofT-2024/tree/main",
+          href: "https://github.com/Haibo-S/C-Architect-Compiler",
         },
+      ],
+    },
+    {
+      title: "2D Torus Network-on-Chip",
+      context: "SystemVerilog · NoC",
+      description:
+        "A parameterized 2D torus interconnect with deflection, backpressure, and credit-based flow control. The project also explores custom low-swing I/O for energy-efficient on-chip links.",
+      image: "images/projects/torus-noc.svg",
+      imageAlt: "A sixteen-node 2D torus network with wraparound links between the edges.",
+      tags: ["SystemVerilog", "Network-on-chip", "Low-swing I/O"],
+      links: [
         {
-          label: "Project story",
-          href: "https://devpost.com/software/rasp-debuggers",
+          label: "Source on GitHub",
+          href: "https://github.com/Haibo-S/Torus-NoC",
         },
       ],
     },

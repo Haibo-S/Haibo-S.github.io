@@ -16,12 +16,8 @@ export default function ProjectsPage() {
       <SiteHeader currentPage="projects" />
       <div className="site-shell subpage-shell">
         <main className="projects-page">
-          <section className="subpage-intro" aria-labelledby="projects-title">
-            <p className="eyebrow"><span className="eyebrow-dot" /> Selected work</p>
+          <section className="subpage-intro projects-intro" aria-labelledby="projects-title">
             <h1 className="subpage-title" id="projects-title">Projects</h1>
-            <p className="subpage-summary">
-              A few things I’ve built around digital logic, embedded systems, and the hardware–software boundary.
-            </p>
           </section>
 
           <section className="project-grid" aria-label="Selected projects">
@@ -56,12 +52,6 @@ export default function ProjectsPage() {
             ))}
           </section>
 
-          <section className="project-contact-prompt" aria-label="Get in touch">
-            <p>Interested in the details?</p>
-            <a href={`${BASE_URL}contact/`}>
-              Get in touch <ArrowUpRight aria-hidden="true" />
-            </a>
-          </section>
         </main>
         <SiteFooter />
       </div>

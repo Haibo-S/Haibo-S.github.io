@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" fill="none">
+  <defs>
+    <pattern id="paper" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" stroke="#d4cebe" stroke-opacity=".38" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="stage" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#fffdf8"/>
+      <stop offset="1" stop-color="#f7f4ea"/>
+    </linearGradient>
+  </defs>
+  <path fill="#eeeae0" d="M0 0h1200v750H0z"/>
+  <path fill="url(#paper)" d="M0 0h1200v750H0z"/>
+  <rect x="52" y="48" width="1096" height="654" rx="30" fill="#fffdf8" stroke="#ded8c8"/>
+  <text x="96" y="107" fill="#87754b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="2">C-ARCHITECT  /  COMPILER PIPELINE</text>
+  <text x="96" y="164" fill="#252821" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="650" letter-spacing="-1">From a C subset to MIPS.</text>
+
+  <rect x="96" y="206" width="300" height="385" rx="17" fill="#202829"/>
+  <path d="M96 253h300" stroke="#ffffff" stroke-opacity=".13"/>
+  <circle cx="122" cy="230" r="5" fill="#e6bb4e"/>
+  <circle cx="140" cy="230" r="5" fill="#91b59c"/>
+  <text x="161" y="235" fill="#b9c2bb" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" letter-spacing="1">main.wlp4</text>
+  <text x="121" y="294" fill="#a9b1aa" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">01</text>
+  <text x="158" y="294" fill="#e6bd54" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">int</text>
+  <text x="191" y="294" fill="#f0eee6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">wain(</text>
+  <text x="252" y="294" fill="#a8cba5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">int</text>
+  <text x="285" y="294" fill="#f0eee6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">x){</text>
+  <text x="121" y="331" fill="#a9b1aa" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">02</text>
+  <text x="158" y="331" fill="#c8d0c8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">  return</text>
+  <text x="239" y="331" fill="#e6bd54" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16"> x + 1;</text>
+  <text x="121" y="368" fill="#a9b1aa" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">03</text>
+  <text x="158" y="368" fill="#f0eee6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">}</text>
+  <path d="M246 413v38" stroke="#dfbd57" stroke-width="2" stroke-linecap="round"/>
+  <path d="m238 443 8 9 8-9" stroke="#dfbd57" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="121" y="468" width="250" height="83" rx="10" fill="#303a3a"/>
+  <text x="144" y="499" fill="#9ba7a0" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" letter-spacing="1">SOURCE LANGUAGE</text>
+  <text x="144" y="530" fill="#f5f0df" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="600">WLP4 / C subset</text>
+
+  <path d="M420 392h44m-12-12 12 12-12 12" stroke="#b89b49" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <g font-family="Inter, Arial, sans-serif">
+    <rect x="482" y="268" width="162" height="108" rx="16" fill="url(#stage)" stroke="#ded8c8"/>
+    <circle cx="509" cy="296" r="13" fill="#f4e6b8"/>
+    <text x="509" y="301" text-anchor="middle" fill="#776020" font-size="12" font-weight="700">01</text>
+    <text x="505" y="341" fill="#282b26" font-size="18" font-weight="650">Scan</text>
+    <text x="505" y="361" fill="#817b6f" font-size="12">tokens</text>
+
+    <rect x="672" y="268" width="162" height="108" rx="16" fill="url(#stage)" stroke="#ded8c8"/>
+    <circle cx="699" cy="296" r="13" fill="#f4e6b8"/>
+    <text x="699" y="301" text-anchor="middle" fill="#776020" font-size="12" font-weight="700">02</text>
+    <text x="695" y="341" fill="#282b26" font-size="18" font-weight="650">Parse</text>
+    <text x="695" y="361" fill="#817b6f" font-size="12">LR(1) tree</text>
+
+    <rect x="862" y="268" width="162" height="108" rx="16" fill="url(#stage)" stroke="#ded8c8"/>
+    <circle cx="889" cy="296" r="13" fill="#f4e6b8"/>
+    <text x="889" y="301" text-anchor="middle" fill="#776020" font-size="12" font-weight="700">03</text>
+    <text x="885" y="341" fill="#282b26" font-size="18" font-weight="650">Check</text>
+    <text x="885" y="361" fill="#817b6f" font-size="12">types + rules</text>
+
+    <path d="M644 322h22m-8-8 8 8-8 8M834 322h22m-8-8 8 8-8 8" stroke="#b89b49" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <rect x="482" y="421" width="542" height="170" rx="17" fill="#eee9db" stroke="#ded8c8"/>
+  <text x="511" y="461" fill="#82754f" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="1.2">CODE GENERATION + ASSEMBLY</text>
+  <text x="511" y="506" fill="#262b27" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17">add $3, $5, $3</text>
+  <text x="511" y="539" fill="#262b27" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17">jr  $31</text>
+  <path d="M765 485h82m-11-11 11 11-11 11" stroke="#ae9140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="873" y="474" fill="#82754f" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" letter-spacing="1">32-BIT WORD</text>
+  <g fill="#293536">
+    <rect x="873" y="492" width="12" height="34" rx="2"/><rect x="890" y="492" width="12" height="34" rx="2"/>
+    <rect x="907" y="492" width="12" height="34" rx="2"/><rect x="924" y="492" width="12" height="34" rx="2"/>
+    <rect x="941" y="492" width="12" height="34" rx="2"/><rect x="958" y="492" width="12" height="34" rx="2"/>
+    <rect x="975" y="492" width="12" height="34" rx="2"/><rect x="992" y="492" width="12" height="34" rx="2"/>
+  </g>
+  <text x="873" y="557" fill="#5d6259" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600">MIPS machine code</text>
+</svg>

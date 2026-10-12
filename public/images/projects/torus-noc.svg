@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" fill="none">
+  <defs>
+    <pattern id="bg-grid" width="26" height="26" patternUnits="userSpaceOnUse">
+      <path d="M26 0H0V26" stroke="#50666a" stroke-opacity=".23" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#354649"/>
+      <stop offset="1" stop-color="#29393c"/>
+    </linearGradient>
+  </defs>
+  <path fill="#1c292c" d="M0 0h1200v750H0z"/>
+  <path fill="url(#bg-grid)" d="M0 0h1200v750H0z"/>
+  <rect x="52" y="48" width="1096" height="654" rx="30" fill="#253437" stroke="#718184" stroke-opacity=".35"/>
+  <text x="98" y="108" fill="#d3bc71" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" letter-spacing="2">INTERCONNECT FABRIC  /  SYSTEMVERILOG</text>
+  <text x="98" y="164" fill="#f4f1e8" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="650" letter-spacing="-1">2D torus, built for the chip.</text>
+
+  <!-- wraparound paths sit behind the 4 × 4 router grid -->
+  <g stroke="#d9b84d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".86">
+    <path d="M338 275C210 275 210 580 338 580"/>
+    <path d="M862 275C990 275 990 580 862 580"/>
+    <path d="M338 275C338 190 862 190 862 275"/>
+    <path d="M338 580C338 665 862 665 862 580"/>
+  </g>
+  <g stroke="#7da7a1" stroke-width="3" stroke-linecap="round" opacity=".9">
+    <path d="M338 275V580M512 275V580M688 275V580M862 275V580"/>
+    <path d="M338 275H862M338 376H862M338 479H862M338 580H862"/>
+  </g>
+  <g fill="#253437" stroke="#d3bc71" stroke-width="2">
+    <rect x="450" y="185" width="10" height="10" rx="3"/>
+    <rect x="740" y="185" width="10" height="10" rx="3"/>
+    <rect x="450" y="659" width="10" height="10" rx="3"/>
+    <rect x="740" y="659" width="10" height="10" rx="3"/>
+    <rect x="199" y="418" width="10" height="10" rx="3"/>
+    <rect x="991" y="418" width="10" height="10" rx="3"/>
+  </g>
+  <g fill="#334548" stroke="#99bab3" stroke-width="2">
+    <rect x="324" y="261" width="28" height="28" rx="8"/>
+    <rect x="498" y="261" width="28" height="28" rx="8"/>
+    <rect x="674" y="261" width="28" height="28" rx="8"/>
+    <rect x="848" y="261" width="28" height="28" rx="8"/>
+    <rect x="324" y="362" width="28" height="28" rx="8"/>
+    <rect x="498" y="362" width="28" height="28" rx="8"/>
+    <rect x="674" y="362" width="28" height="28" rx="8"/>
+    <rect x="848" y="362" width="28" height="28" rx="8"/>
+    <rect x="324" y="465" width="28" height="28" rx="8"/>
+    <rect x="498" y="465" width="28" height="28" rx="8"/>
+    <rect x="674" y="465" width="28" height="28" rx="8"/>
+    <rect x="848" y="465" width="28" height="28" rx="8"/>
+    <rect x="324" y="566" width="28" height="28" rx="8"/>
+    <rect x="498" y="566" width="28" height="28" rx="8"/>
+    <rect x="674" y="566" width="28" height="28" rx="8"/>
+    <rect x="848" y="566" width="28" height="28" rx="8"/>
+  </g>
+  <g fill="#e7e3d6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" text-anchor="middle">
+    <text x="338" y="279">00</text><text x="512" y="279">01</text><text x="688" y="279">02</text><text x="862" y="279">03</text>
+    <text x="338" y="380">04</text><text x="512" y="380">05</text><text x="688" y="380">06</text><text x="862" y="380">07</text>
+    <text x="338" y="483">08</text><text x="512" y="483">09</text><text x="688" y="483">10</text><text x="862" y="483">11</text>
+    <text x="338" y="584">12</text><text x="512" y="584">13</text><text x="688" y="584">14</text><text x="862" y="584">15</text>
+  </g>
+  <g fill="#9db8b0" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="1">
+    <text x="227" y="267">WRAP</text>
+    <text x="227" y="588">LINK</text>
+    <text x="927" y="267">WRAP</text>
+    <text x="927" y="588">LINK</text>
+  </g>
+  <g fill="#e8c653">
+    <circle cx="425" cy="376" r="5"/><circle cx="600" cy="479" r="5"/><circle cx="775" cy="376" r="5"/>
+  </g>
+  <rect x="99" y="626" width="1002" height="1" fill="#8a9a99" fill-opacity=".4"/>
+  <text x="100" y="658" fill="#c9d2ca" font-family="Inter, Arial, sans-serif" font-size="14">PARAMETERIZED ROUTERS  ·  MULTIPLE FLOW CONTROL MODES  ·  LOW-SWING LINKS</text>
+</svg>

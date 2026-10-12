@@ -5,7 +5,7 @@ const BASE_URL = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 
-type Page = "home" | "projects" | "contact";
+type Page = "home" | "projects";
 
 export function SocialLinks() {
   return (
@@ -36,7 +36,6 @@ export function SiteHeader({ currentPage = "home" }: { currentPage?: Page }) {
     { label: "Experience", href: experienceHref },
     { label: "Education", href: educationHref },
     { label: "Projects", href: `${BASE_URL}projects/`, page: "projects" },
-    { label: "Contact", href: `${BASE_URL}contact/`, page: "contact" },
   ];
 
   return (
