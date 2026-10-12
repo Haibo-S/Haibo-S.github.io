@@ -11,7 +11,7 @@ The site content is in [`src/data/resume.tsx`](src/data/resume.tsx):
 - The selected project rows link directly to public GitHub repositories.
 - Update the LinkedIn URL if you use a different public profile URL.
 
-To use official company logo artwork, add a small image in `public/logos/` and point that internship's `logoUrl` at it. Keeping assets in the repository makes them load reliably and avoids third-party logo services. Each experience row has a compact monogram fallback.
+Company logo marks are stored locally in `public/logos/` so they load without third-party requests. The experience component keeps a compact monogram fallback for companies without a suitable icon asset.
 
 Set colors in [`src/styles/global.css`](src/styles/global.css). The deployment URL and repository subpath are read from GitHub Actions automatically. For a custom domain, set `SITE_URL` in the workflow and add your domain to `public/CNAME` after configuring DNS.
 
