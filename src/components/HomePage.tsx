@@ -1,4 +1,4 @@
-import { ArrowDownRight, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { DATA } from "@/data/resume";
 
 const BASE_URL = import.meta.env.BASE_URL.endsWith("/")
@@ -49,12 +49,8 @@ function ExperienceList() {
   return (
     <div className="experience-list">
       {DATA.work.map((work) => (
-        <a
+        <div
           className={`experience-row${work.logoStyle === "wordmark" ? " experience-row-wordmark" : ""}`}
-          href={work.href}
-          target="_blank"
-          rel="noreferrer"
-          aria-label={`${work.title} at ${work.company}, ${work.period}`}
           key={`${work.company}-${work.title}-${work.period}`}
         >
           <span className="company-logo" aria-hidden="true">
@@ -65,8 +61,17 @@ function ExperienceList() {
             <span className="experience-role">{work.title}</span>
           </span>
           <span className="experience-period">{work.period}</span>
-          <ArrowUpRight className="row-arrow" aria-hidden="true" />
-        </a>
+          <a
+            className="row-arrow-link"
+            href={work.href}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`Visit ${work.company} website`}
+            title={`Visit ${work.company}`}
+          >
+            <ArrowUpRight className="row-arrow" aria-hidden="true" />
+          </a>
+        </div>
       ))}
     </div>
   );
@@ -79,7 +84,6 @@ export default function HomePage() {
     <>
       <header className="site-header">
         <a className="wordmark" href="#about" aria-label={`${DATA.name}, home`}>
-          <span className="wordmark-mark" aria-hidden="true">H</span>
           <span>{DATA.name}</span>
         </a>
         <nav aria-label="Main navigation" className="site-nav">
@@ -92,7 +96,6 @@ export default function HomePage() {
 
       <div className="site-shell">
         <main>
-          <Education />
           <section
             className="hero"
             id="about"
@@ -103,9 +106,6 @@ export default function HomePage() {
               <div className="hero-copy">
                 <h1 id="hero-title"><span>{DATA.name}</span></h1>
                 <p className="hero-intro">{DATA.description}</p>
-                <a className="scroll-link" href="#experience">
-                  Explore my experience <ArrowDownRight aria-hidden="true" />
-                </a>
               </div>
 
               <figure className="hero-photo">
@@ -113,6 +113,8 @@ export default function HomePage() {
               </figure>
             </div>
           </section>
+
+          <Education />
 
           <section className="content-section experience-section" id="experience" aria-labelledby="experience-title">
             <div className="section-heading">

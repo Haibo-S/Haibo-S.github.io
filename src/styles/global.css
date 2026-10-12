@@ -80,22 +80,9 @@ a:focus-visible {
 .wordmark {
   grid-area: brand;
   width: fit-content;
-  gap: 11px;
   font-size: 16px;
   font-weight: 700;
   letter-spacing: -0.035em;
-}
-
-.wordmark-mark {
-  display: grid;
-  width: 36px;
-  height: 36px;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--yellow);
-  color: #302916;
-  font-size: 15px;
-  font-weight: 750;
 }
 
 .site-nav {
@@ -307,32 +294,11 @@ a:focus-visible {
 .hero-intro {
   max-width: 790px;
   margin: 0;
-  color: #36342f;
+  color: #111111;
   font-size: clamp(18px, 1.65vw, 21px);
   font-weight: 450;
   line-height: 1.68;
   text-wrap: pretty;
-}
-
-.scroll-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  margin-top: 25px;
-  color: #3c3932;
-  font-size: 15px;
-  font-weight: 700;
-}
-
-.scroll-link svg {
-  width: 18px;
-  height: 18px;
-  color: #9b7412;
-  transition: transform 160ms ease;
-}
-
-.scroll-link:hover svg {
-  transform: translate(2px, 2px);
 }
 
 .hero-photo {
@@ -399,12 +365,7 @@ a:focus-visible {
   width: 100%;
   border-bottom: 1px solid var(--line);
   padding: 19px 12px 19px 8px;
-  cursor: pointer;
   transition: background-color 160ms ease, padding 160ms ease;
-}
-
-.experience-row > * {
-  pointer-events: none;
 }
 
 .experience-row:first-child {
@@ -476,16 +437,25 @@ a:focus-visible {
   white-space: nowrap;
 }
 
+.row-arrow-link {
+  display: grid;
+  width: 100%;
+  max-width: 28px;
+  height: 28px;
+  place-items: center;
+  justify-self: center;
+  color: #8e6b12;
+  cursor: pointer;
+}
+
 .row-arrow {
   display: block;
-  align-self: center;
   width: 22px;
   height: 22px;
-  color: #8e6b12;
   transition: transform 160ms ease;
 }
 
-.experience-row:hover .row-arrow {
+.row-arrow-link:hover .row-arrow {
   transform: translate(2px, -2px);
 }
 
@@ -769,11 +739,6 @@ a:focus-visible {
 
   .wordmark {
     font-size: 14px;
-  }
-
-  .wordmark-mark {
-    width: 32px;
-    height: 32px;
   }
 
   .social-links {
